@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+* {
+    font-family: "Lato", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+h2 {
+    color: white;
+    margin: 20px;
+}
+
+.card-container {
+    margin: 20px;
+    padding: 200px 50px;
+    overflow: auto;
+    min-height: 80vh;
+    border: 2px solid orange;
+    border-radius: 10px;
+    display: flex;
+}
+
+.card {
+    width: 300px;
+    height: 450px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    padding: 0.9em;
+    border: 1px solid black;
+    background-color: rgba(23, 20, 29, 1);
+    border-radius: 15px;
+    border-style: none;
+    transition: all 0.3s;
+    box-shadow: -15px 3px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+.card-heading {
+    margin: 0.5em 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.card-heading span {
+    color: grey;
+    font-weight: lighter;
+    margin-left: 10px;
+}
+
+.card-content {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 1em 0;
+}
+
+/* author section */
+
+.author {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.author-visual {
+    position: relative;
+}
+.author-image {
+    display: block;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.author-image-circle {
+    stroke: #ff8a02;
+    stroke-linecap: round;
+    stroke-width: 6;
+    fill-opacity: 0;
+    fill: none;
+    position: absolute;
+    top: 22px;
+    left: -7px;
+}
+
+.author-identity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.author-prefix {
+    color: grey;
+    font-weight: bold;
+}
+
+.tags {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    align-items: flex-start;
+}
+
+.tag {
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+    padding: 3px;
+    border-radius: 10px;
+    border: 3px darkgrey solid;
+}
+
+/* the animation and shading */
+
+.card:not(:first-child) {
+    margin-left: -100px;
+}
+
+.card:hover {
+    transform: translateY(-50px);
+}
+
+.card:hover ~ .card {
+    transform: translateX(100px);
+}
+
+/* linear gradient fpr text on hover*/
+
+.tag:hover,
+.author-name:hover,
+.card-content:hover {
+    cursor: pointer;
+    background-image: linear-gradient(
+        to left,
+        #e6316e,
+        #f6415b,
+        #ff5746,
+        #ff702d,
+        #ff8a02
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-content {
+    font-weight: 800;
+}
+
+.tag:hover {
+    border-color: white;
+}
